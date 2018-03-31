@@ -1,6 +1,6 @@
 # Awesome Software Development Best Practices
 
-## Handling errors
+## Handling Errors
 
 Try to make the error handling in your applications simple. Error handling is as important as **happy path** in an application. Nobody wants to receive the same systemic error message with no meaningful information or a language specific strack trace. Here are some principles to adopt:
 
@@ -35,7 +35,7 @@ Logging is important to see the application state in a specific period of time o
 list.stream()
     .forEach(x -> {
         // TODO doing something here
-        // I don't know how many items will have in the list, it is dynamically
+        // I don't know how many items will have in the list
         logger.info("X-force: '{}'", x);
     });
 ```
