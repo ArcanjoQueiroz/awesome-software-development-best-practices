@@ -73,9 +73,9 @@ Now, some anti-pattern examples (It is important too):
 
 ```sh
 $ curl 'http://localhost:8080/service/customerServiceImpl/1234' # Java Service naming structure
-$ curl 'http://localhost:8080/service/rs/customerServiceImpl/1234/find # rs is redundant and find is a verb
+$ curl 'http://localhost:8080/service/rs/customerServiceImpl/1234/find' # rs is redundant and find is a verb
 $ curl 'http://localhost:8080/service/rs/customerServiceImpl/service/customer?id=1234' # normally query params are optional and the noun customer is repeated
-$ curl 'http://localhost:8080/service/rs/customers/items/1234 # Is it 1234 an item or a customer?
+$ curl 'http://localhost:8080/service/rs/customers/items/1234' # Is it 1234 an item or a customer?
 ```
 
 Keep your RESTFul URLs **short** and **model by resource**s in order to become easier to understand and to consume the API. Your clients will thank you. 
