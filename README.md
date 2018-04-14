@@ -78,4 +78,29 @@ $ curl 'http://localhost:8080/service/rs/customerServiceImpl/service/customer?id
 $ curl 'http://localhost:8080/service/rs/customers/items/1234' # Is it 1234 an item or a customer?
 ```
 
-Keep your RESTFul URLs **short** and **model by resource**s in order to become easier to understand and to consume the API. Your clients will thank you. 
+Keep your RESTFul URLs **short** and **model by resources** in order to become easier to understand and to consume the API. Your clients will thank you. 
+
+## Identifiers
+
+Please, don’t expose important ids to the users (I mean the, end users) mainly if they are numeric. The user can easily guess another valid identifiers and access other users content if there aren’t any validations, for example. Here are:
+
+- First, try to use alphanumeric identifiers like this:
+
+```sh
+$ curl ‘http://localhost:8080/service/accounts/5ad0e9b546e0fb00458c31d9’
+```
+
+Instead of:
+
+```sh
+$ curl ‘http://localhost:8080/service/accounts/27’
+```
+
+- Don’t forget the **authentication** and **authorisation** for your RESTful Web Services. In some languages you can create some type of interceptor (Servlet Filters, Spring Security Filters, CXF Interceptors, Express Middlewares, Python Decorators and so on) for your HTTP requests in order to verify the user identity and permission. OAuth2 is a good choice for authorisation too.
+
+- The RESTful Web Service must retrieve some essential info (like a company id or an internal id) through a JWT passed by a HTTP Authorisation Header. Let me give an example:
+
+```sh
+$ curl -X GET -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ” http://localhost:8080/service/accounts/5ad0e9b546e0fb00458c31d9’
+```
+- The JWT should carry only essential data (like an ID). Additional data should be retrieved using these identifiers.
