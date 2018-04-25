@@ -6,17 +6,24 @@ Try to make the error handling in your applications simple. Error handling is as
 
 * Use the http code correctly. If a resource is not found, for example, return http 404 code. The same for invalid arguments in your API (400) or an internal server error (500).
 
-* Send info about the error to the caller. Return a JSON (or another format of text if you prefer) only with a **code** (for the computers) and a **message** (for the humans). Let me give an example:
+* Send info about the error to the caller. Return a JSON (or another format of text if you prefer) only with a **code** (for the computers) and a **message** (for the humans [developers, end users, testers, ...]). Let me give an example:
 
 ```js
 { "code": "APP.001", "message": "There is no address for the given zip-code" } 
 ```
-You can translate the code for a meaningful message to the users or show the message text received from the server. It's up to you. Try to create a pattern for all the microservices/systems error codes, for example, APP.001, where APP is the microservice/system name and 001 is the error number.
-It's nice if you use i18n (internationalisation) for your messages through **Accept-Language** header.
+You can translate the code for a meaningful message to the final users or show the message text received from the server. It's up to you. Try to create a pattern for all microservices/systems error codes, for example, APP.001, where APP is the microservice/system name and 001 is the error number.
+It's nice if you use i18n (internationalisation) for your messages through **Accept-Language** header. Remember, your end user could be a developer too. You can add args field in your JSON to send special parameters too.
 
-* Handle the basic error types. Try to handle errors like resource not found, invalid arguments, service unavailable, unexpected errors and the business errors as well.
+```js
+{ "code": "APP.002", "message": "There are {0} types of candies in your pocket. You need {1} to execute this functionality", "args": [ 5, 10 ] }
+```
 
-* Use mime-types and headers correctly. If you return a JSON use Content-Type application/json, not text/plain. Front-end developers will appreciate that. The same for headers, like an authorisation header (see AWS API for example), for example. This practice won't pollute the query params with systemic values, but remember, the default http headers character encoding is ASCII.
+In conclusion, keep the messages simple. Avoid send more than these three fields (code, message and args) as response. And so many code translations too.
+
+
+* Handle the basic error types. Try to handle errors like resource not found (404), invalid arguments (400), service unavailable (503), unexpected errors (500) and the business errors as well.
+
+* Use mime-types and headers correctly. If you return a JSON, use Content-Type application/json, not text/plain. Developers will appreciate that. The same for headers, like an authorisation header (see AWS API for example), for example. This practice won't pollute the query params with system values, but remember, the default http headers character encoding is ASCII. For errors don't forget to verify the Content-Type before extract error code and messages as well.
 
 ## Logging
 
