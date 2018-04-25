@@ -12,7 +12,7 @@ Try to make the error handling in your applications simple. Error handling is as
 { "code": "APP.001", "message": "There is no address for the given zip-code" } 
 ```
 You can translate the code for a meaningful message to the final users or show the message text received from the server. It's up to you. Try to create a pattern for all microservices/systems error codes, for example, APP.001, where APP is the microservice/system name and 001 is the error number.
-It's nice if you use i18n (internationalisation) for your messages through **Accept-Language** header. Remember, your end user could be a developer too. You can add args field in your JSON to send special parameters too.
+It's nice if you use i18n (internationalisation) for your messages through **Accept-Language** header. Remember, your **end user could be a developer** too. You can add args field in your JSON to send special parameters too.
 
 ```js
 { "code": "APP.002", "message": "There are {0} types of candies in your pocket. You need {1} to execute this functionality", "args": [ 5, 10 ] }
