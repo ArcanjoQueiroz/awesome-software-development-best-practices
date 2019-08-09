@@ -26,7 +26,7 @@
 25. Use o [KISS] (https://en.wikipedia.org/wiki/KISS_principle).
 26. Não projete ou desenvolva usando o [BDUF] (https://www.knowledge21.com.br/blog/bduf/). Projete usando o [YAGNI](https://deviq.com/yagni/).
 27. Evite criar métodos com mais de 4 ou 5 argumentos.
-28. Evite criar/modificar classes com mais 500 linhas. Se existir, tem que ser refatorada.
+28. Evite criar/modificar classes com mais 500 linhas. Se existir, tem que ser refatorada. Veja regra #38.
 29. Use imutabilidade tanto quanto for possível.
 30. Lembre-se que o código também vai para a memória, não só os valores e objetos.
 31. Logs são muito importantes, mas não devem poluir o output. Use os diferentes níveis de log no seu projeto.
@@ -37,5 +37,6 @@
 36. Aplicações distribuídas são complexas. Evite o máximo possível, mas se for necesário faça a quebra.
 37. Distribua os seus serviços seguindo as regras de negócio e não por organização técnica.
 38. Use a [regra do escoteiro](https://deviq.com/boy-scout-rule/).
-39. Use pull requests como uma forma de discutir o código e verificar problemas. Dá até para fazer comentários nas linhas. E não como uma ferramenta só para merge de código com a branch de desenvolvimento.
+39. Use pull requests como uma forma de discutir o código e verificar problemas. E não como uma ferramenta só para merge de código com a branch de desenvolvimento. Dá até para fazer comentários nas linhas!
 40. Aprenda a dizer [não](https://codingjourneyman.com/2014/09/04/the-clean-coder-saying-no/) quando for necessário.
+
