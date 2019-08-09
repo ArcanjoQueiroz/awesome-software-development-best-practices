@@ -22,9 +22,9 @@
 21. Respeite a organização do projeto. Se tiver uma sugestão de mudança, comente, discuta. Toda melhoria é muito bem vinda, mas se manifeste.
 22. Use interfaces quando for necessário. Não faz sentido uma interface para somente uma implementação. 
 23. Leia o README.md. E também escreva o README.md.
-24. Use o conceito de [divisão e conquista](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) tanto para algoritmos quando para problemas.
-25. Use o [KISS] (https://en.wikipedia.org/wiki/KISS_principle).
-26. Não projete ou desenvolva usando o [BDUF] (https://www.knowledge21.com.br/blog/bduf/). Projete usando o [YAGNI](https://deviq.com/yagni/).
+24. Use o conceito de [divisão-e-conquista](https://en.wikipedia.org/wiki/Divide-and-conquer_algorithm) tanto para algoritmos quando para problemas.
+25. Use o [KISS](https://en.wikipedia.org/wiki/KISS_principle).
+26. Não projete ou desenvolva usando o [BDUF](https://www.knowledge21.com.br/blog/bduf/). Projete usando o [YAGNI](https://deviq.com/yagni/).
 27. Evite criar métodos com mais de 4 ou 5 argumentos.
 28. Evite criar/modificar classes com mais 500 linhas. Se existir, tem que ser refatorada. Veja regra #38.
 29. Use imutabilidade tanto quanto for possível.
